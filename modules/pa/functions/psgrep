@@ -1,0 +1,3 @@
+### psgrep: Grep through ps processes.
+
+ps aux | egrep "$@" | grep -v grep | egrep "$@"
