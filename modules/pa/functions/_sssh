@@ -1,0 +1,6 @@
+#compdef sssh
+#autoload
+
+_alternative \
+	     'users:user:_users' \
+	     'hosts:host:_hosts'
