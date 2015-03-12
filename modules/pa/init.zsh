@@ -15,11 +15,14 @@ pmodload history-substring-search
 pmodload prompt
 
 # Remove unwanted default aliases
-unalias rm
-unalias cp
-unalias mv
-unalias mkdir
-unalias ln
+
+for alias in ack cd cp ebuild gcc gist grep heroku ln man mkdir mv \
+		 mysql rm bower fc find ftp history locate rake rsync \
+		 scp sftp ; do
+    if (( ${+aliases[$alias]} )) ; then
+	unalias $alias
+    fi
+done
 
 # Add custom aliases
 alias a=aptitude
@@ -51,6 +54,7 @@ setopt nohistignorealldups
 setopt nosharehistory
 setopt nomenu_complete
 setopt nocorrect
+unsetopt CORRECT
 
 setopt clobber
 setopt interactivecomments
