@@ -63,6 +63,10 @@ setopt magic_equal_subst
 setopt pushd_minus
 setopt rmstarsilent
 
+# Customise key bindings (find out what something sends by Ctrl+V $keycombo)
+bindkey "^[[D" backward-word
+bindkey "^[[C" forward-word
+
 # Custom prompt
 autoload prompt_pa_setup
 prompt_pa_setup
